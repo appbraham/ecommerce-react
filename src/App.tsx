@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import ProductCard from './components/ProductCard';
+import Header from './components/Header';
 
 function App() {
   return (
@@ -7,6 +8,9 @@ function App() {
       {/* <h1>Soy un título</h1>
       <Button label="Shop Now" bgColor="bg-black text-white rounded-full" fontColor="" bdrRadius=""/>
       <Button label="View All" bgColor="white" fontColor="black" bdrRadius="none"/> */}
+
+      <Header />
+
       <h1 className='font-integral text-6xl'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
       <p className='font-satoshi text-xl'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
 
