@@ -3,9 +3,9 @@ import Textfield from "../Textfield"
 
 const Header = () => {
   return (
-    <header className="max-w-[1440px] flex items-center justify-between gap-12 py-6 px-4">
+    <header className="max-w-[1440px] flex items-center justify-between gap-12 py-6 px-4 mx-auto">
         <div className="flex gap-4 items-center">
-            <svg className="" width="24" height="24" fill="none"><path d="M21.375 12a1.125 1.125 0 0 1-1.125 1.125H3.75a1.125 1.125 0 1 1 0-2.25h16.5A1.125 1.125 0 0 1 21.375 12ZM3.75 7.125h16.5a1.125 1.125 0 0 0 0-2.25H3.75a1.125 1.125 0 0 0 0 2.25Zm16.5 9.75H3.75a1.125 1.125 0 1 0 0 2.25h16.5a1.125 1.125 0 1 0 0-2.25Z" fill="#000"/></svg>
+            <svg className="md:hidden" width="24" height="24" fill="none"><path d="M21.375 12a1.125 1.125 0 0 1-1.125 1.125H3.75a1.125 1.125 0 1 1 0-2.25h16.5A1.125 1.125 0 0 1 21.375 12ZM3.75 7.125h16.5a1.125 1.125 0 0 0 0-2.25H3.75a1.125 1.125 0 0 0 0 2.25Zm16.5 9.75H3.75a1.125 1.125 0 1 0 0 2.25h16.5a1.125 1.125 0 1 0 0-2.25Z" fill="#000"/></svg>
             <span className="relative -top-1 font-integral text-2xl align-middle md:text-3xl">SHOP.CO</span>
         </div>
         <Menubar />
