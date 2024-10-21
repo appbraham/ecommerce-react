@@ -1,23 +1,50 @@
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App.tsx'
 import "./index.css";
-import Button from './components/Button';
 import ErrorPage from './pages/ErrorPage';
+import ProductDetail from './pages/ProductDetail/index.tsx';
+import { ShoppingCartProvider } from './context/index.tsx';
+import Layout from './components/Layout.tsx/index.tsx';
+import Home from './pages/Home/index.tsx';
+import Shop from './pages/Shop/Shop.tsx';
+import NewArrival from './pages/NewArrival/index.tsx';
+import BrandPage from './pages/BrandPage/index.tsx';
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <App />,
+        path: '/',
+        element: <Layout />,
+        children: [
+            {
+                path: "/",
+                element: <Home />
+                
+            },
+            {
+                path: "products/:productId",
+                element: <ProductDetail />
+        
+            },
+            {
+                path: "shop",
+                element: <Shop />
+            },
+            {
+                path: "new-arrivals",
+                element: <NewArrival />
+            },
+            {
+                path: "brands",
+                element: <BrandPage />
+            }
+        ],
         errorElement: <ErrorPage/>
-    },
-    {
-        path: "boton",
-        element: <Button label='Buy Now' bdrRadius='rounded-full' bgColor='bg-black' fontColor='text-white' />
-    }
+    },    
 ]);
 
 // createRoot(document.getElementById('root')!).render(<App />)
 createRoot(document.getElementById('root')!).render(
-    <RouterProvider router={router} />
+    <ShoppingCartProvider >
+        <RouterProvider router={router} />
+    </ShoppingCartProvider>
 )

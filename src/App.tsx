@@ -1,8 +1,9 @@
 // import { Link } from 'react-router-dom';
 // import ProductCard from './components/ProductCard';
 import Brand from './components/Brand';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Hero from './components/Hero';
+import ProductContainer from './components/ProductContainer';
 
 function App() {
   return (
@@ -11,10 +12,12 @@ function App() {
       <Button label="Shop Now" bgColor="bg-black text-white rounded-full" fontColor="" bdrRadius=""/>
       <Button label="View All" bgColor="white" fontColor="black" bdrRadius="none"/> */}
 
-      <Header />
+      {/* <Header /> */}
 
       <Hero />
       <Brand />
+
+      <ProductContainer />
 
       {/* <h1 className='font-integral text-6xl'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
       <p className='font-satoshi text-xl'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
