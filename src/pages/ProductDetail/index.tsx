@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IProduct } from "../../types/product";
 import { API_URL } from "../../utils";
-import { ShoppingCartContext } from '../../context/index';
+// import { ShoppingCartContext } from '../../context/index';
 import Rating from "../../components/Rating";
 import Divider from "../../components/Divider";
 
@@ -10,7 +10,7 @@ const ProductDetail = () => {
 
   const [products, setProducts] = useState<IProduct[]>([]);
 
-  const context = useContext(ShoppingCartContext)
+  // const context = useContext(ShoppingCartContext)
 
   useEffect( () => {
     fetch(`${API_URL}/products?offset=0&limit=10`).then(response => {
@@ -43,7 +43,9 @@ const ProductDetail = () => {
       </div>
       <div className="space-y-2">
         <h2 className="font-integral text-2xl md:text-3xl">{product.title}</h2>
+        
         <Rating />
+
         <p className="text-2xl font-bold md:text-3xl">${product.price}</p>
         <p className="text-black/60">{product.description}</p>
       </div>
