@@ -4,7 +4,11 @@ import ProductCard from "../ProductCard";
 import { IProduct } from "../../types/product";
 import ButtonView from "../ButtonView";
 
-const ProductContainer = () => {
+interface Props {
+  title: string;
+}
+
+const ProductContainer = ( {title}:Props ) => {
 
   const [products, setProducts] = useState<IProduct[]>([]);
 
@@ -14,12 +18,9 @@ const ProductContainer = () => {
     })
   }, []);
 
-  console.log(products, 'Lista de productos');
-  
-
   return (    
-    <div className="max-w-[1440px] mx-auto px-4 my-20 flex flex-col gap-12">
-      <h2 className="font-integral text-4xl text-center lg:text-5xl">NEW ARRIVALS</h2>
+    <div className="max-w-[1440px] mx-auto px-4 my-16 flex flex-col gap-12">
+      <h2 className="font-integral text-4xl text-center lg:text-5xl">{title}</h2>
       <div className="flex gap-12 py-4 overflow-x-auto">
         {
           products.map( (product: IProduct) => (            

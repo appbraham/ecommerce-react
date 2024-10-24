@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 export default {
   content: [
     "./index.html",
@@ -9,7 +11,8 @@ export default {
     extend: {
       fontFamily:{
         integral:['"Integral CF"'],
-        satoshi:['"Satoshi"'],
+        satoshi:['Satoshi'],
+        sans: ['Satoshi', ...defaultTheme.fontFamily.sans]
       }
     },
   },

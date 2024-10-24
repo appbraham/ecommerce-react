@@ -4,11 +4,11 @@ import "./index.css";
 import ErrorPage from './pages/ErrorPage';
 import ProductDetail from './pages/ProductDetail/index.tsx';
 import { ShoppingCartProvider } from './context/index.tsx';
-import Layout from './components/Layout.tsx/index.tsx';
 import Home from './pages/Home/index.tsx';
 import Shop from './pages/Shop/Shop.tsx';
 import NewArrival from './pages/NewArrival/index.tsx';
 import BrandPage from './pages/BrandPage/index.tsx';
+import Layout from './components/Layout/index.tsx';
 
 const router = createBrowserRouter([
     {
