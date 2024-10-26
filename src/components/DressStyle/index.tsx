@@ -12,24 +12,24 @@ const DressStyle = () => {
 
             <div className="grid gap-6 items-center justify-center grid-cols-1 md:grid-cols-5">
 
-                <div className='relative md:col-span-2'>
-                    <span className='absolute top-6 left-6 font-satoshi font-bold text-2xl lg:text-4xl lg:top-10 lg:left-10'>Casual</span>
-                    <img className='h-48 object-cover object-top rounded-3xl w-full md:h-72' src={casual} alt="Casual Style" />
+                <div className='relative md:col-span-2 rounded-3xl overflow-hidden'>
+                    <span className='absolute z-10 top-6 left-6 font-satoshi font-bold text-2xl lg:text-4xl lg:top-10 lg:left-10'>Casual</span>
+                    <img className='h-48 object-cover object-top w-full cursor-pointer transition-transform duration-500 hover:scale-110 md:h-72' src={casual} alt="Casual Style" />
                 </div>
 
-                <div className='relative md:col-span-3'>
-                    <span className='absolute top-6 left-6 font-satoshi font-bold text-2xl lg:text-4xl lg:top-10 lg:left-10'>Formal</span>
-                    <img className='h-48 object-cover object-top rounded-3xl w-full md:h-72' src={formal} alt="Formal Style" />
+                <div className='relative md:col-span-3 rounded-3xl overflow-hidden'>
+                    <span className='absolute z-10 top-6 left-6 font-satoshi font-bold text-2xl lg:text-4xl lg:top-10 lg:left-10'>Formal</span>
+                    <img className='h-48 object-cover object-top w-full cursor-pointer transition-transform duration-500 hover:scale-110 md:h-72' src={formal} alt="Formal Style" />
                 </div>
 
-                <div className='relative md:col-span-3'>
-                    <span className='absolute top-6 left-6 font-satoshi font-bold text-2xl lg:text-4xl lg:top-10 lg:left-10'>Party</span>
-                    <img className='h-48 object-cover object-top rounded-3xl w-full md:h-72' src={party} alt="Party Style" />
+                <div className='relative md:col-span-3 rounded-3xl overflow-hidden'>
+                    <span className='absolute z-10 top-6 left-6 font-satoshi font-bold text-2xl lg:text-4xl lg:top-10 lg:left-10'>Party</span>
+                    <img className='h-48 object-cover object-top w-full cursor-pointer transition-transform duration-500 hover:scale-110 md:h-72' src={party} alt="Party Style" />
                 </div>
 
-                <div className='relative md:col-span-2'>
-                    <span className='absolute top-6 left-6 font-satoshi font-bold text-2xl lg:text-4xl lg:top-10 lg:left-10'>Gym</span>
-                    <img className='h-48 object-cover object-top rounded-3xl w-full md:h-72' src={gym} alt="Gym Style" />
+                <div className='relative md:col-span-2 rounded-3xl overflow-hidden'>
+                    <span className='absolute z-10 top-6 left-6 font-satoshi font-bold text-2xl lg:text-4xl lg:top-10 lg:left-10'>Gym</span>
+                    <img className='h-48 object-cover object-top w-full cursor-pointer transition-transform duration-500 hover:scale-110 md:h-72' src={gym} alt="Gym Style" />
                 </div>
             </div>
         </div>

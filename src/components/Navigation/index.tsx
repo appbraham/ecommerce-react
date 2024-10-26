@@ -29,7 +29,9 @@ const Navigation = () => {
             </ul>
           </div>
 
-          <Textfield inputType="text" label="Search for products..." />
+          <div className="w-full hidden lg:block">
+            <Textfield label="Search for products..." />
+          </div>
 
           <div className="flex gap-3 mr-4">
               <svg className="lg:hidden" width="24" height="24" fill="none"><path d="m21.796 20.204-4.452-4.454a8.636 8.636 0 1 0-1.594 1.594l4.456 4.457a1.126 1.126 0 1 0 1.594-1.594l-.004-.003ZM4.125 10.5a6.375 6.375 0 1 1 6.375 6.375A6.381 6.381 0 0 1 4.125 10.5Z" fill="#000"/></svg>

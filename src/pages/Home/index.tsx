@@ -4,10 +4,11 @@ import Brand from '../../components/Brand'
 import ProductContainer from '../../components/ProductContainer'
 import Divider from '../../components/Divider'
 import DressStyle from '../../components/DressStyle'
+import Comments from '../../components/Comments'
 
 const Home = () => {
     return (
-        <>   
+        <div className='mb-12'>   
          <Hero />
          <Brand />
 
@@ -18,7 +19,10 @@ const Home = () => {
          </section>
 
          <DressStyle />
-        </>
+
+         <Comments />
+
+        </div>
      )
 }
 
