@@ -1,11 +1,17 @@
 import { NavLink } from "react-router-dom";
 import Textfield from "../Textfield";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ShoppingCartContext } from "../../context";
 
 const Navigation = () => {
 
     const context = useContext(ShoppingCartContext);
+
+    const [ isChecked, setIsChecked] = useState<boolean>(false);
+
+    const handleOnChange = () => {
+      setIsChecked(!isChecked);
+    }
   
     return (
     <header className="max-w-[1440px] gap-2 py-6 px-4 mx-auto lg:gap-12 lg:px-0">
@@ -15,17 +21,17 @@ const Navigation = () => {
           <div  className="flex items-center gap-4 w-full md:justify-between">
             <label className="peer group relative cursor-pointer z-50 md:hidden">
                 <svg className="group-has-[:checked]:hidden md:hidden" width="24" height="24" fill="none"><path d="M21.375 12a1.125 1.125 0 0 1-1.125 1.125H3.75a1.125 1.125 0 1 1 0-2.25h16.5A1.125 1.125 0 0 1 21.375 12ZM3.75 7.125h16.5a1.125 1.125 0 0 0 0-2.25H3.75a1.125 1.125 0 0 0 0 2.25Zm16.5 9.75H3.75a1.125 1.125 0 1 0 0 2.25h16.5a1.125 1.125 0 1 0 0-2.25Z" fill="#000"/></svg>
-                <svg className="hidden group-has-[:checked]:block md:hidden" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="m7 7 10 10M7 17 17 7"/></svg>
-                <input type="checkbox" id="menu" className="hidden" />
+                <svg className="hidden group-has-[:checked]:block group-has-[:checked]:fixed md:hidden" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="m7 7 10 10M7 17 17 7"/></svg>
+                <input type="checkbox" id="menu" className="hidden" checked={isChecked} onChange={handleOnChange} />
             </label>
 
             <span className="relative -top-1 font-integral text-2xl align-middle md:text-3xl">SHOP.CO</span>
             
-            <ul className="hidden peer-has-[:checked]:flex fixed inset-0 z-20  bg-gray-200 font-satoshi font-medium h-full flex-col items-center justify-center gap-2 p-4 text-nowrap md:flex md:static md:flex-row md:bg-white *:w-full">
-              <li><NavLink className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/"}>Shop</NavLink></li>                
-              <li><NavLink className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/shop"}>On Sale</NavLink></li>
-              <li><NavLink className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/new-arrivals"}>New Arrivals</NavLink></li>
-              <li><NavLink className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/brands"}>Brands</NavLink></li>
+            <ul className={`hidden peer-has-[:checked]:flex fixed inset-0 z-20  bg-gray-200 font-satoshi font-medium h-full flex-col items-center justify-center gap-2 p-4 text-nowrap md:flex md:static md:flex-row md:bg-white *:w-full`}>
+              <li><NavLink onClick={handleOnChange} className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/"}>Shop</NavLink></li>                
+              <li><NavLink onClick={handleOnChange} className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/shop"}>On Sale</NavLink></li>
+              <li><NavLink onClick={handleOnChange} className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/new-arrivals"}>New Arrivals</NavLink></li>
+              <li><NavLink onClick={handleOnChange} className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/brands"}>Brands</NavLink></li>
             </ul>
           </div>
 

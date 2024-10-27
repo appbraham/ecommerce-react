@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import Newsletter from "../Newsletter"
+import TypePayment from '../TypePayment/index';
 
 const Footer = () => {
   return (
@@ -56,7 +57,17 @@ const Footer = () => {
                 <li>How to - Blog</li>
                 <li>Youtube Playlist</li>
             </ul>
+            
+            <div className="col-span-2 flex flex-col gap-6 items-center justify-between lg:col-span-6">
+                <div className="w-full h-0.5 bg-black/10"></div>
+                <div className="w-full flex flex-col gap-6 items-center justify-between lg:flex-row">
+                    <span>© 2000-2021, All rights reserved</span>
+                    <TypePayment />
+                </div>
+            </div>
         </div>
+
+
 
     </footer>
   )
