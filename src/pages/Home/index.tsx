@@ -12,7 +12,7 @@ const Home = () => {
          <Hero />
          <Brand />
 
-         <section>
+         <section className='px-4'>
             <ProductContainer title="NEW ARRIVALS"/>
             <Divider />
             <ProductContainer title="TOP SELLING" />

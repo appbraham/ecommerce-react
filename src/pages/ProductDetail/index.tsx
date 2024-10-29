@@ -32,49 +32,59 @@ const ProductDetail = () => {
   
 
   return (
-    <section className="max-w-[1440px] mx-auto flex flex-col gap-6 px-4 pb-12">
-      <div className="flex flex-col gap-2 sm:gap-4">
-        <img className="rounded-2xl" src={product.images[0]} alt={product.title} />
-        <div className="flex justify-between gap-2 overflow-auto sm:justify-center sm:gap-4">
+    <section className="max-w-[1440px] mx-auto flex flex-col gap-6 px-4 md:flex-row xl:py-4 xl:gap-8">
+      <div className="flex flex-col gap-4 md:flex-col xl:flex-row-reverse">
+
+        <div className="xl:w-3/4" >
+          <img className="rounded-2xl object-cover xl:h-full" src={product.images[0]} alt={product.title} />
+        </div>
+
+        <div className="flex justify-between gap-4 sm:justify-center xl:flex-col xl:w-1/4">
           {
-            product.images.map( url => <img key={product.id} className="max-w-28 rounded-2xl object-cover" src={url} alt={product.title}/>)
+            product.images.map( url => (
+            <div className="rounded-2xl overflow-hidden hover:cursor-pointer hover:ring-4 xl:h-full">
+              <img className="object-cover rounded-2xl transition-transform duration-300 hover:scale-105 xl:h-full" key={product.id} src={url} alt={product.title}/>
+            </div>))
           }
         </div>
+
       </div>
-      <div className="space-y-2">
-        <h2 className="font-integral text-2xl md:text-3xl">{product.title}</h2>
-        
-        <Rating />
-
-        <p className="text-2xl font-bold md:text-3xl">${product.price}</p>
-        <p className="text-black/60">{product.description}</p>
-      </div>
-
-      <Divider />
-
-      <div className="flex flex-col gap-3">
-        <span className="text-black/60">Select Color</span>
-        <div className="flex gap-4">
-          <span className="size-10 bg-stone-700 rounded-full"></span>
-          <span className="size-10 bg-lime-700 rounded-full"></span>
-          <span className="size-10 bg-green-950 rounded-full"></span>
-        </div>
-      </div>
-
-      <Divider />
-
-      <div className="flex flex-col gap-3">
-        <span className="text-black/60">Choose Size</span>
-        <div className="flex justify-between items-center gap-2 flex-wrap">
-          <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">Small</button>
-          <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">Medium</button>
-          <button className="bg-black text-sm text-white font-medium rounded-full px-4 py-2">Large</button>
-          <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">X-Large</button>
-        </div>
-      </div>
-
-      <Divider />
       
+      <div className="flex flex-col gap-4">      
+        <div className="space-y-2">
+          <h2 className="font-integral text-2xl md:text-3xl">{product.title}</h2>
+          
+          <Rating />
+
+          <p className="text-2xl font-bold md:text-3xl">${product.price}</p>
+          <p className="text-black/60">{product.description}</p>
+        </div>
+
+        <Divider />
+
+        <div className="flex flex-col gap-3">
+          <span className="text-black/60">Select Color</span>
+          <div className="flex gap-4">
+            <span className="size-10 bg-stone-700 rounded-full"></span>
+            <span className="size-10 bg-lime-700 rounded-full"></span>
+            <span className="size-10 bg-green-950 rounded-full"></span>
+          </div>
+        </div>
+
+        <Divider />
+
+        <div className="flex flex-col gap-3">
+          <span className="text-black/60">Choose Size</span>
+          <div className="flex justify-between items-center gap-2 flex-wrap sm:justify-start">
+            <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">Small</button>
+            <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">Medium</button>
+            <button className="bg-black text-sm text-white font-medium rounded-full px-4 py-2">Large</button>
+            <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">X-Large</button>
+          </div>
+        </div>
+
+        <Divider />
+      </div>
       {/* Usando conext api */}
       {/* <h2>{context.count}</h2>
       <button 

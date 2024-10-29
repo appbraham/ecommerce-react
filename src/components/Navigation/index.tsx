@@ -14,7 +14,7 @@ const Navigation = () => {
     }
   
     return (
-    <header className="max-w-[1440px] gap-2 py-6 px-4 mx-auto lg:gap-12 lg:px-0">
+    <header className="max-w-[1440px] gap-2 py-6 px-4 mx-auto lg:gap-12">
       
         <nav className="flex items-center justify-between gap-4 lg:gap-12">
           
