@@ -15,7 +15,6 @@ const Textfield = ({label, icon="search"}: ITextfield) => {
   }
 
   return (
-    // <div className="relative w-full hidden lg:block">
     <div className="relative w-full">
         <input type="text" placeholder={label} className="w-full h-12 font-satoshi font-medium text-base bg-gray-200 rounded-full pl-12 pr-6 py-2 placeholder:text-black/50" />
         {renderIcon()}

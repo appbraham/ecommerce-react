@@ -7,7 +7,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   // safelist: ["text-white", "text-black", "bg-white", "bg-black", "rounded-full"],
-  theme: {
+  theme: {    
     extend: {
       fontFamily:{
         integral:['"Integral CF"'],

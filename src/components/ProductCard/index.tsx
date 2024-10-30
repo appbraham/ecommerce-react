@@ -14,7 +14,7 @@ const ProductCard = ({ id, title, images, price}: IProduct) => {
         <Link to={`/products/${id}`}>
             <p className='font-bold text-base md:text-xl'>{title}</p>
         </Link>
-        <Rating />
+        <Rating rating={4.2} />
         <span className='font-bold text-2xl'>${price}</span>
     </div>
   )

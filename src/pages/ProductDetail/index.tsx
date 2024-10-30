@@ -5,10 +5,18 @@ import { API_URL } from "../../utils";
 // import { ShoppingCartContext } from '../../context/index';
 import Rating from "../../components/Rating";
 import Divider from "../../components/Divider";
+import ColorPicker from "../../components/ColorPicker";
 
 const ProductDetail = () => {
 
+  const customColors = ['#ff0000', '#00ff00', '#0000ff'];
+  // const customColors = ["bg-red-500", "bg-green-500", "bg-blue-500"];
+
+
   const [products, setProducts] = useState<IProduct[]>([]);
+
+  const [indexImage, setIndexImage] = useState<number>(0);
+  
 
   // const context = useContext(ShoppingCartContext)
 
@@ -36,14 +44,14 @@ const ProductDetail = () => {
       <div className="flex flex-col gap-4 md:flex-col xl:flex-row-reverse">
 
         <div className="xl:w-3/4" >
-          <img className="rounded-2xl object-cover xl:h-full" src={product.images[0]} alt={product.title} />
+          <img className="rounded-2xl object-cover xl:h-full" src={product.images[indexImage]} alt={product.title} />
         </div>
 
         <div className="flex justify-between gap-4 sm:justify-center xl:flex-col xl:w-1/4">
           {
-            product.images.map( url => (
-            <div className="rounded-2xl overflow-hidden hover:cursor-pointer hover:ring-4 xl:h-full">
-              <img className="object-cover rounded-2xl transition-transform duration-300 hover:scale-105 xl:h-full" key={product.id} src={url} alt={product.title}/>
+            product.images.map( (url, index) => (
+            <div key={product.id} className="rounded-2xl overflow-hidden hover:cursor-pointer hover:ring-4 xl:h-full">
+              <img src={url} alt={product.title} onClick={() => setIndexImage(index)} className="object-cover rounded-2xl transition-transform duration-300 hover:scale-105 xl:h-full"/>
             </div>))
           }
         </div>
@@ -54,7 +62,7 @@ const ProductDetail = () => {
         <div className="space-y-2">
           <h2 className="font-integral text-2xl md:text-3xl">{product.title}</h2>
           
-          <Rating />
+          <Rating rating={4.6}/>
 
           <p className="text-2xl font-bold md:text-3xl">${product.price}</p>
           <p className="text-black/60">{product.description}</p>
@@ -64,11 +72,10 @@ const ProductDetail = () => {
 
         <div className="flex flex-col gap-3">
           <span className="text-black/60">Select Color</span>
-          <div className="flex gap-4">
-            <span className="size-10 bg-stone-700 rounded-full"></span>
-            <span className="size-10 bg-lime-700 rounded-full"></span>
-            <span className="size-10 bg-green-950 rounded-full"></span>
-          </div>
+
+          {/* colors */}
+
+          <ColorPicker colors={customColors} />
         </div>
 
         <Divider />
