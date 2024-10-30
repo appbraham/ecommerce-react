@@ -6,12 +6,11 @@ import { API_URL } from "../../utils";
 import Rating from "../../components/Rating";
 import Divider from "../../components/Divider";
 import ColorPicker from "../../components/ColorPicker";
+import SizePicker from "../../components/SizePicker";
 
 const ProductDetail = () => {
 
-  const customColors = ['#ff0000', '#00ff00', '#0000ff'];
-  // const customColors = ["bg-red-500", "bg-green-500", "bg-blue-500"];
-
+  const customColors = ['#4F4631', '#314F4A', '#31344F'];
 
   const [products, setProducts] = useState<IProduct[]>([]);
 
@@ -58,7 +57,7 @@ const ProductDetail = () => {
 
       </div>
       
-      <div className="flex flex-col gap-4">      
+      <div className="flex flex-col gap-4 lg:gap-6">      
         <div className="space-y-2">
           <h2 className="font-integral text-2xl md:text-3xl">{product.title}</h2>
           
@@ -70,24 +69,17 @@ const ProductDetail = () => {
 
         <Divider />
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 lg:gap-4">
           <span className="text-black/60">Select Color</span>
-
-          {/* colors */}
 
           <ColorPicker colors={customColors} />
         </div>
 
         <Divider />
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 lg:gap-4">
           <span className="text-black/60">Choose Size</span>
-          <div className="flex justify-between items-center gap-2 flex-wrap sm:justify-start">
-            <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">Small</button>
-            <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">Medium</button>
-            <button className="bg-black text-sm text-white font-medium rounded-full px-4 py-2">Large</button>
-            <button className="bg-gray-200 text-sm text-black/60 font-medium rounded-full px-5 py-2">X-Large</button>
-          </div>
+          <SizePicker sizes={["Small","Medium","Large","X-Large"]}/>
         </div>
 
         <Divider />
