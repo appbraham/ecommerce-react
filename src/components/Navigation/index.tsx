@@ -27,7 +27,7 @@ const Navigation = () => {
 
             <span className="relative -top-1 font-integral text-2xl align-middle md:text-3xl">SHOP.CO</span>
             
-            <ul className={`hidden peer-has-[:checked]:flex fixed inset-0 z-20  bg-gray-200 font-satoshi font-medium h-full flex-col items-center justify-center gap-2 p-4 text-nowrap md:flex md:static md:flex-row md:bg-white *:w-full`}>
+            <ul className={`hidden peer-has-[:checked]:flex fixed inset-0 z-20  bg-gray-200 font-satoshi font-medium h-full flex-col items-center justify-center gap-2 p-4 text-nowrap md:flex md:static md:flex-row md:bg-white`}>
               <li><NavLink onClick={handleOnChange} className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/"}>Shop</NavLink></li>                
               <li><NavLink onClick={handleOnChange} className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/shop"}>On Sale</NavLink></li>
               <li><NavLink onClick={handleOnChange} className={"block rounded-full text-center py-2 px-5 w-full transition-colors hover:bg-black hover:text-white"} to={"/new-arrivals"}>New Arrivals</NavLink></li>
