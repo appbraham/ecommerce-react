@@ -25,12 +25,6 @@ const ColorPicker = ( { colors }:ICustomColor) => {
                 }
             )
         }
-
-        
-
-        {/* <span className="size-10 bg-stone-700 rounded-full"></span>
-        <span className="size-10 bg-lime-700 rounded-full"></span>
-        <span className="size-10 bg-green-950 rounded-full"></span> */}
     </div>    
   )
 }

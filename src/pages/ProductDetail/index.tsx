@@ -7,6 +7,7 @@ import Rating from "../../components/Rating";
 import Divider from "../../components/Divider";
 import ColorPicker from "../../components/ColorPicker";
 import SizePicker from "../../components/SizePicker";
+import AddCart from "../../components/AddCart";
 
 const ProductDetail = () => {
 
@@ -77,12 +78,15 @@ const ProductDetail = () => {
 
         <Divider />
 
-        <div className="flex flex-col gap-3 lg:gap-4">
+        <div className="flex flex-col gap-6 lg:gap-6">
           <span className="text-black/60">Choose Size</span>
           <SizePicker sizes={["Small","Medium","Large","X-Large"]}/>
         </div>
 
         <Divider />
+        
+        <AddCart />
+
       </div>
       {/* Usando conext api */}
       {/* <h2>{context.count}</h2>
