@@ -8,21 +8,26 @@ import Comments from '../../components/Comments'
 
 const Home = () => {
     return (
-        <div className='mb-12'>   
+      <div className='mb-12'>   
          <Hero />
          <Brand />
 
          <section className='px-4'>
-            <ProductContainer title="NEW ARRIVALS"/>
+            <ProductContainer title="NEW ARRIVALS" label='View All'/>
             <Divider />
-            <ProductContainer title="TOP SELLING" />
+            <ProductContainer title="TOP SELLING" label='View All' />
          </section>
 
          <DressStyle />
 
-         <Comments />
-
-        </div>
+         <section className="max-w-[1440px] mx-auto my-16 px-4">
+            <h2 className="font-integral font-bold text-3xl my-16 lg:text-5xl">OUR HAPPY CUSTOMERS</h2>
+            <div className="flex gap-6 items-center pb-4 overflow-x-auto">
+               <Comments />
+            </div>
+         </ section>
+         
+      </div>
      )
 }
 
