@@ -4,8 +4,8 @@ import heroImage from "../../assets/images/hero.png";
 
 const Hero = () => {
   return (
-    <div className="bg-gray-200 flex flex-col items-center px-4">
-      <div className="max-w-[1440px] flex flex-col gap-4 items-center  md:flex-row ">
+    <div className="bg-gray-200 flex flex-col items-center">
+      <div className="max-w-[1440px] flex flex-col gap-4 px-4 items-center  md:flex-row ">
         <div className="flex-1 space-y-6 py-6 lg:space-y-10">
           <h1 className='font-integral text-4xl lg:text-6xl'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
           <p className='font-satoshi text-lg lg:text-xl'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>

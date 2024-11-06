@@ -9,7 +9,7 @@ const Tab = () => {
             <input type="radio" name="tabs" id="product" className="peer/product hidden"/>
             <label htmlFor="product" className="flex-1 text-center border-b-2 p-4 text-black/60 cursor-pointer peer-checked/product:text-black peer-checked/product:font-medium peer-checked/product:border-b-black md:text-xl">Product Details</label>
             
-            <input type="radio" name="tabs" id="rating" className="peer/rating hidden"/>
+            <input type="radio" name="tabs" id="rating" className="peer/rating hidden" defaultChecked/>
             <label htmlFor="rating" className="flex-1 text-center border-b-2 p-4 text-black/60 cursor-pointer peer-checked/rating:text-black peer-checked/rating:font-medium peer-checked/rating:border-b-black md:text-xl">Rating & Reviews</label>
 
             <input type="radio" name="tabs" id="faq" className="peer/faq hidden"/>

@@ -21,7 +21,7 @@ const ProductContainer = ( {title, label, showButton=true}:Props ) => {
   }, []);
 
   return (    
-    <div className="max-w-[1440px] mx-auto px-4 my-16 flex flex-col gap-4">
+    <div className="max-w-[1440px] mx-auto my-16 flex flex-col gap-4">
       <h2 className="font-integral text-4xl text-center mb-6 lg:text-5xl">{title}</h2>
       <div className="flex gap-12 py-4 overflow-x-auto">
         {

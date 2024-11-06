@@ -9,6 +9,7 @@ import Shop from './pages/Shop/Shop.tsx';
 import NewArrival from './pages/NewArrival/index.tsx';
 import BrandPage from './pages/BrandPage/index.tsx';
 import Layout from './components/Layout/index.tsx';
+import CartPage from './pages/CartPage/index.tsx';
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: "brands",
                 element: <BrandPage />
+            },
+            {
+                path: "cart",
+                element: <CartPage />
             }
         ],
         errorElement: <ErrorPage/>

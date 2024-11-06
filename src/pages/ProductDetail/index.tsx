@@ -76,18 +76,21 @@ const ProductDetail = () => {
             <span className="text-black/60">Select Color</span>
 
             <ColorPicker colors={customColors} />
+
           </div>
 
           <Divider />
 
           <div className="flex flex-col gap-6 lg:gap-6">
             <span className="text-black/60">Choose Size</span>
+
             <SizePicker sizes={["Small","Medium","Large","X-Large"]}/>
+            
           </div>
 
           <Divider />
           
-          <AddCart />
+          <AddCart {...product} />
 
         </div>     
 

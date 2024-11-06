@@ -6,7 +6,6 @@ const ColorPicker = ( { colors }:ICustomColor) => {
   const [currentColor, setCurrentColor] = useState<string>(colors[0]);
 
   const handleRadioChange = (event:React.ChangeEvent<HTMLInputElement>) => {
-    console.log("color seleccionado",event.target.value);    
     setCurrentColor(event.target.value)
   }
 

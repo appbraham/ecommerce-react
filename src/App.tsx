@@ -3,7 +3,7 @@
 import Brand from './components/Brand';
 // import Header from './components/Header';
 import Hero from './components/Hero';
-import ProductContainer from './components/ProductContainer';
+// import ProductContainer from './components/ProductContainer';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Hero />
       <Brand />
 
-      <ProductContainer />
+      {/* <ProductContainer /> */}
 
       {/* <h1 className='font-integral text-6xl'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
       <p className='font-satoshi text-xl'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
@@ -25,7 +25,7 @@ function App() {
       <ProductCard name={"Polo gris"} originalPrice={260} discount={20} />
       <ProductCard name={"Polo verde"} originalPrice={210} />
       <ProductCard name={"Polo azul"} originalPrice={210} discount={25} />
-      
+
       <Link to={"boton"}>Ir a boton</Link>  */}
      </>
   )

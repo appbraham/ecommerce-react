@@ -1,11 +1,14 @@
 import { useContext, useState } from "react"
 import { ShoppingCartContext } from "../../context";
+import { IProduct } from "../../types/product";
 
-const AddCart = () => {
+const AddCart = ({...product}:IProduct) => {
 
   const context = useContext(ShoppingCartContext)
 
   const [count, setCount] = useState<number>(1);
+
+  // const [cart, setCart] = useState<IProduct[]>([]);
 
   const validCount = (evalCount:number) => {
     if(evalCount < 1){
@@ -15,11 +18,14 @@ const AddCart = () => {
   }
 
   const addOneToCounter = (plus:boolean) => {
-    if(!plus){
-      return setCount(validCount(count - 1));
-    }else {
-      return setCount(validCount(count + 1));
-    }  
+
+    return plus? setCount(validCount(count + 1)) : setCount(validCount(count - 1));
+  }
+
+  const addProductToContext = () => {
+    // setCart(Array(product));
+    context.setCount(count);
+    context.setCartProducts(Array(product));
   }
 
   return (
@@ -33,7 +39,7 @@ const AddCart = () => {
                 <svg className="mx-auto" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M19.375 10a1.125 1.125 0 0 1-1.125 1.125h-7.125v7.125a1.125 1.125 0 1 1-2.25 0v-7.125H1.75a1.125 1.125 0 1 1 0-2.25h7.125V1.75a1.125 1.125 0 0 1 2.25 0v7.125h7.125A1.125 1.125 0 0 1 19.375 10Z" fill="black"/></svg>
             </button>
         </div>
-        <button onClick={() => context.setCount(count)} className="w-full py-3 bg-black text-white rounded-full hover:bg-gray-800 hover:ring hover:ring-gray-500 active:bg-gray-500">Add to Cart</button>
+        <button onClick={ addProductToContext } className="w-full py-3 bg-black text-white rounded-full hover:bg-gray-800 hover:ring hover:ring-gray-500 active:bg-gray-500">Add to Cart</button>
     </div>
   )
 }
