@@ -11,7 +11,10 @@ const CartPage = () => {
         <div>
             {
                 context.cartProducts.map((product) => (
-                    <p>{product.title}</p>
+                    <>
+                        <p>{product.title}</p>
+                        <p>{context.count}</p>
+                    </>
                 ))
             }
         </div>
