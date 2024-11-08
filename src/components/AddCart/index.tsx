@@ -26,8 +26,9 @@ const AddCart = ( product:IProduct ) => {
   const addProductToContext = () => {
     // setCart(cart);
     // setCart(cart);
-    context.setCount(count);
-    context.addProduct(product)
+    // context.setCount(count);
+    // context.addProduct(product)
+    context.addToCart(product, count)
   }
 
   return (

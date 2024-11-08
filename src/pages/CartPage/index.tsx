@@ -10,11 +10,11 @@ const CartPage = () => {
         <h2>CartPage</h2>
         <div>
             {
-                context.cartProducts.map((product) => (
-                    <>
-                        <p>{product.title}</p>
-                        <p>{context.count}</p>
-                    </>
+                context.cart.map( (cart, index) => (
+                    <div key={index}>
+                        <p>{cart.product.title}</p>
+                        <p>{cart.quantity}</p>
+                    </div>
                 ))
             }
         </div>

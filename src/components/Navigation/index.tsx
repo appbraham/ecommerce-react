@@ -9,6 +9,17 @@ const Navigation = () => {
 
     const [ isChecked, setIsChecked] = useState<boolean>(false);
 
+    const totalProducts = () => {
+      let acc:number = 0;
+
+      context.cart.map( (cart) => {
+        acc = acc + cart.quantity
+      })
+
+      return acc;
+      // reduce((accumulator, currentValue) => (accumulator + currentValue));
+    }
+
     const handleOnChange = () => {
 
       return isChecked? setIsChecked(false): setIsChecked(true);
@@ -46,8 +57,8 @@ const Navigation = () => {
                 <NavLink to={"cart"}>
                   <svg width="24" height="24" fill="none"><path d="M9.375 20.25a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0Zm7.875-1.875a1.875 1.875 0 1 0 0 3.75 1.875 1.875 0 0 0 0-3.75Zm4.825-11.294-2.558 8.316a2.614 2.614 0 0 1-2.51 1.853H7.775a2.637 2.637 0 0 1-2.525-1.904L2.045 4.125h-.92a1.125 1.125 0 0 1 0-2.25h1.202a1.882 1.882 0 0 1 1.803 1.36l.683 2.39H21a1.125 1.125 0 0 1 1.075 1.456Zm-2.598.794H5.455l1.959 6.853a.375.375 0 0 0 .36.272h9.233a.375.375 0 0 0 .36-.264l2.11-6.861Z" fill="#000"/></svg>
                   {
-                    context.count? 
-                    <p className="absolute -top-3 -right-3 text-white flex items-center justify-center text-xs rounded-full size-5 bg-red-400">{context.count}</p>
+                    totalProducts() !== 0? 
+                    <p className="absolute -top-3 -right-3 text-white flex items-center justify-center text-xs rounded-full size-5 bg-red-400">{totalProducts()}</p>
                     :""
                   }              
                 </NavLink>
