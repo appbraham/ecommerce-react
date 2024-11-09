@@ -1,11 +1,18 @@
 import { createContext, useState } from "react";
-import { IProduct } from "../types/product";
+// import { IProduct } from "../types/product";
 import { ICart } from '../types/cart';
 
 interface ShoppingCartContextType {
+    // color: string;
+    // setColor: React.Dispatch<React.SetStateAction<string>>;
+    // addColorProduct: (color:string) => void;
+    // size: string;
+    // setSize: React.Dispatch<React.SetStateAction<string>>;
+    // addSizeProduct: (color:string) => void;
     cart: ICart[];
     setCart: React.Dispatch<React.SetStateAction<ICart[]>>;
-    addToCart: (cart: IProduct, quantity: number) => void;
+    addToCart: (cart: ICart) => void;
+    // addToCart: (cart: IProduct, quantity: number, color:string, size:string) => void;
 }
 
 export const ShoppingCartContext = createContext<ShoppingCartContextType>(
@@ -20,8 +27,22 @@ export const ShoppingCartProvider = ( {children}: ShoppingCartProviderProps ) =>
 
     const [cart, setCart] = useState<ICart[]>([]);
 
-    const addToCart = (product: IProduct, quantity: number) => {
-        setCart( () => [ ...cart, {product, quantity} ]);
+    // const [color, setColor] = useState<string>("");
+    // const [size, setSize] = useState<string>("Small");
+    // const addColorProduct = (colorParam:string) => {
+    //     setColor(colorParam);
+    // }
+    // const addSizeProduct = (sizeParam:string) => {
+    //     setSize(sizeParam);
+    // }
+
+
+
+    // const addToCart = (product: IProduct, quantity: number, color:string, size:string) => {
+    //     setCart( () => [ ...cart, {product, quantity, color, size} ]);
+    // }
+    const addToCart = (cartProducts:ICart) => {
+        setCart( (prevCartProducts) => [ ...prevCartProducts, cartProducts ]);
     }
 
     return (

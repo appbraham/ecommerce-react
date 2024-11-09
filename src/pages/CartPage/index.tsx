@@ -4,6 +4,7 @@ import { ShoppingCartContext } from '../../context';
 const CartPage = () => {
 
     const context = useContext(ShoppingCartContext);
+    
 
   return (
     <div>
@@ -14,6 +15,8 @@ const CartPage = () => {
                     <div key={index}>
                         <p>{cart.product.title}</p>
                         <p>{cart.quantity}</p>
+                        <p>{cart.color}</p>
+                        <p>{cart.size}</p>
                     </div>
                 ))
             }

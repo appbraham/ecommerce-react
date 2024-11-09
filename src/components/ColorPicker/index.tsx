@@ -1,12 +1,13 @@
-import { useState } from "react";
 import { ICustomColor } from "../../types/customColor";
+import { useState } from "react";
 
-const ColorPicker = ( { colors }:ICustomColor) => {
+const ColorPicker = ( { colors, sendColor }:ICustomColor) => {
 
   const [currentColor, setCurrentColor] = useState<string>(colors[0]);
 
   const handleRadioChange = (event:React.ChangeEvent<HTMLInputElement>) => {
-    setCurrentColor(event.target.value)
+    setCurrentColor(event.target.value);
+    sendColor(event.target.value);
   }
 
   return (

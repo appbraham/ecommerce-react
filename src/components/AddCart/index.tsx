@@ -1,15 +1,13 @@
 import { useContext, useState } from "react"
 import { ShoppingCartContext } from "../../context";
-import { IProduct } from "../../types/product";
+import { ICart } from "../../types/cart";
+// import { IProduct } from "../../types/product";
 
-const AddCart = ( product:IProduct ) => {
+const AddCart = ( cart:ICart ) => {
 
   const context = useContext(ShoppingCartContext)
 
   const [count, setCount] = useState<number>(1);
-
-  // const [cart, setCart] = useState<IProduct[]>([]);
-
 
   const validCount = (evalCount:number) => {
     if(evalCount < 1){
@@ -24,11 +22,7 @@ const AddCart = ( product:IProduct ) => {
   }
 
   const addProductToContext = () => {
-    // setCart(cart);
-    // setCart(cart);
-    // context.setCount(count);
-    // context.addProduct(product)
-    context.addToCart(product, count)
+    context.addToCart( cart );
   }
 
   return (

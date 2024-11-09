@@ -10,12 +10,17 @@ import SizePicker from "../../components/SizePicker";
 import AddCart from "../../components/AddCart";
 import Tab from "../../components/Tab";
 import ProductContainer from "../../components/ProductContainer";
+import { ICart } from "../../types/cart";
 
 const ProductDetail = () => {
 
   const customColors = ['#4F4631', '#314F4A', '#31344F'];
+  const customSizes = ["Small","Medium","Large","X-Large"];
 
   const [products, setProducts] = useState<IProduct[]>([]);
+
+  const [color, setColor] = useState<string>("");
+  const [size, setSize] = useState<string>("");
 
   const [indexImage, setIndexImage] = useState<number>(0);  
 
@@ -38,7 +43,18 @@ const ProductDetail = () => {
   if (!product) {
     return <h2>Producto no encontrado</h2>;
   }
-  
+
+  const addColor = (selectedColor:string) => {
+    setColor(selectedColor);
+  }
+
+  const addSize = (selectedSize:string) => {
+    setSize(selectedSize);
+  }
+
+  const cart:ICart = {id:"C1", product, quantity:4, color, size}
+
+
 
   return (
     <div className="max-w-[1440px] mx-auto px-4">
@@ -75,7 +91,7 @@ const ProductDetail = () => {
           <div className="flex flex-col gap-3 lg:gap-4">
             <span className="text-black/60">Select Color</span>
 
-            <ColorPicker colors={customColors} />
+            <ColorPicker colors={customColors} sendColor={addColor}/>
 
           </div>
 
@@ -84,13 +100,13 @@ const ProductDetail = () => {
           <div className="flex flex-col gap-6 lg:gap-6">
             <span className="text-black/60">Choose Size</span>
 
-            <SizePicker sizes={["Small","Medium","Large","X-Large"]}/>
+            <SizePicker sizes={customSizes} sendSize={addSize}/>
             
           </div>
 
           <Divider />
           
-          <AddCart {...product} />
+          <AddCart {...cart} />
 
         </div>     
 
