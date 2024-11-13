@@ -6,4 +6,5 @@ export interface ICart{
     quantity: number;
     color: string;
     size: string;
+    sendQuantity: (quantityProduct: number) => void;
 }

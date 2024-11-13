@@ -21,6 +21,7 @@ const ProductDetail = () => {
 
   const [color, setColor] = useState<string>("");
   const [size, setSize] = useState<string>("");
+  const [quantity, setQuantity] = useState<number>(1);
 
   const [indexImage, setIndexImage] = useState<number>(0);  
 
@@ -52,7 +53,11 @@ const ProductDetail = () => {
     setSize(selectedSize);
   }
 
-  const cart:ICart = {id:"C1", product, quantity:4, color, size}
+  const addQuantity = (selectedQuantity: number) => {
+    setQuantity(selectedQuantity);
+  }
+
+  const cart:ICart = {id:"C1", product, quantity, color, size}
 
 
 
@@ -106,7 +111,7 @@ const ProductDetail = () => {
 
           <Divider />
           
-          <AddCart {...cart} />
+          <AddCart {...cart} sendQuantity={addQuantity}/>
 
         </div>     
 

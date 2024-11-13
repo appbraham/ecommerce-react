@@ -1,13 +1,16 @@
 import { useContext, useState } from "react"
 import { ShoppingCartContext } from "../../context";
 import { ICart } from "../../types/cart";
-// import { IProduct } from "../../types/product";
 
 const AddCart = ( cart:ICart ) => {
 
   const context = useContext(ShoppingCartContext)
 
   const [count, setCount] = useState<number>(1);
+
+  // const setQuantity = (quantity:number) => {
+  //   cart.sendQuantity(quantity);
+  // }
 
   const validCount = (evalCount:number) => {
     if(evalCount < 1){
@@ -18,11 +21,17 @@ const AddCart = ( cart:ICart ) => {
 
   const addOneToCounter = (plus:boolean) => {
 
-    return plus? setCount(validCount(count + 1)) : setCount(validCount(count - 1));
+    if(plus){
+      setCount(validCount(count + 1));
+    }else{
+      setCount(validCount(count - 1));
+    }
+
   }
 
   const addProductToContext = () => {
     context.addToCart( cart );
+    cart.sendQuantity( count );
   }
 
   return (
