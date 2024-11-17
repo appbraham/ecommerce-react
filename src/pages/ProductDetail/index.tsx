@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IProduct } from "../../types/product";
 import { API_URL } from "../../utils";
-// import { ShoppingCartContext } from '../../context/index';
+import { ICart } from "../../types/cart";
+import { ShoppingCartContext } from "../../context";
 import Rating from "../../components/Rating";
 import Divider from "../../components/Divider";
 import ColorPicker from "../../components/ColorPicker";
@@ -10,7 +11,6 @@ import SizePicker from "../../components/SizePicker";
 import AddCart from "../../components/AddCart";
 import Tab from "../../components/Tab";
 import ProductContainer from "../../components/ProductContainer";
-import { ICart } from "../../types/cart";
 
 const ProductDetail = () => {
 
@@ -25,7 +25,7 @@ const ProductDetail = () => {
 
   const [indexImage, setIndexImage] = useState<number>(0);  
 
-  // const context = useContext(ShoppingCartContext)
+  const context = useContext(ShoppingCartContext)
 
   useEffect( () => {
     fetch(`${API_URL}/products?offset=0&limit=10`).then(response => {
@@ -57,8 +57,12 @@ const ProductDetail = () => {
     setQuantity(selectedQuantity);
   }
 
+  
   const cart:ICart = {id:"C1", product, quantity, color, size}
-
+  
+  const saveCart = () => {
+    context.addToCart(cart);
+  }
 
 
   return (
@@ -111,7 +115,8 @@ const ProductDetail = () => {
 
           <Divider />
           
-          <AddCart {...cart} sendQuantity={addQuantity}/>
+          <AddCart sendQuantity={addQuantity} onClick={ saveCart }/>
+          {/* <AddCart {...cart} sendQuantity={addQuantity}/> */}
 
         </div>     
 

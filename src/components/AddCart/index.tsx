@@ -1,16 +1,14 @@
-import { useContext, useState } from "react"
-import { ShoppingCartContext } from "../../context";
-import { ICart } from "../../types/cart";
+import { useState } from "react"
 
-const AddCart = ( cart:ICart ) => {
+interface AddCart {
+  // quantiy: number;
+  sendQuantity: (qty:number) => void;
+  onClick: (event:React.MouseEvent<HTMLButtonElement>) => void;
+}
 
-  const context = useContext(ShoppingCartContext)
+const AddCart = ({sendQuantity, onClick}:AddCart) => {
 
   const [count, setCount] = useState<number>(1);
-
-  // const setQuantity = (quantity:number) => {
-  //   cart.sendQuantity(quantity);
-  // }
 
   const validCount = (evalCount:number) => {
     if(evalCount < 1){
@@ -23,15 +21,16 @@ const AddCart = ( cart:ICart ) => {
 
     if(plus){
       setCount(validCount(count + 1));
+      console.log(count);      
+      sendQuantity(count);
+      
     }else{
       setCount(validCount(count - 1));
+      console.log(count);
+      sendQuantity(count);
     }
 
-  }
-
-  const addProductToContext = () => {
-    context.addToCart( cart );
-    cart.sendQuantity( count );
+    // sendQuantity(count);
   }
 
   return (
@@ -45,7 +44,7 @@ const AddCart = ( cart:ICart ) => {
                 <svg className="mx-auto" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M19.375 10a1.125 1.125 0 0 1-1.125 1.125h-7.125v7.125a1.125 1.125 0 1 1-2.25 0v-7.125H1.75a1.125 1.125 0 1 1 0-2.25h7.125V1.75a1.125 1.125 0 0 1 2.25 0v7.125h7.125A1.125 1.125 0 0 1 19.375 10Z" fill="black"/></svg>
             </button>
         </div>
-        <button onClick={ addProductToContext } className="w-full py-3 bg-black text-white rounded-full hover:bg-gray-800 hover:ring hover:ring-gray-500 active:bg-gray-500">Add to Cart</button>
+        <button onClick={ onClick } className="w-full py-3 bg-black text-white rounded-full hover:bg-gray-800 hover:ring hover:ring-gray-500 active:bg-gray-500">Add to Cart</button>
     </div>
   )
 }

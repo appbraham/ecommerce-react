@@ -5,6 +5,6 @@ export interface ICart{
     product: IProduct;
     quantity: number;
     color: string;
-    size: string;
-    sendQuantity: (quantityProduct: number) => void;
+    size: string;    
+    // sendQuantity: (quantityProduct: number) => void | undefined;
 }
