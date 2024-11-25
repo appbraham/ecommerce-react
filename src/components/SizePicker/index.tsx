@@ -12,9 +12,9 @@ const SizePicker = ( {sizes, sendSize}: Size ) => {
 
     const handleRadioChange = (size: string) => {
         setCurrentSize(size);
-        sendSize(size);
     }
-
+    
+    sendSize(currentSize);
 
   return (
     <div className="flex justify-between items-center gap-x-3 gap-y-8 flex-wrap sm:justify-start">

@@ -15,7 +15,7 @@ const CartPage = () => {
                     <div key={index}>
                         <p>{cart.product.title}</p>
                         <p>{cart.quantity}</p>
-                        <p>{cart.color}</p>
+                        <p style={{backgroundColor: cart.color}}>{cart.color}</p>
                         <p>{cart.size}</p>
                     </div>
                 ))

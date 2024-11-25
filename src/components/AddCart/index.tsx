@@ -10,7 +10,7 @@ const AddCart = ({sendQuantity, onClick}:AddCart) => {
 
   const [count, setCount] = useState<number>(1);
 
-  const validCount = (evalCount:number) => {
+  const validCount = (evalCount:number):number => {
     if(evalCount < 1){
       return 1;      
     }
@@ -19,18 +19,17 @@ const AddCart = ({sendQuantity, onClick}:AddCart) => {
 
   const addOneToCounter = (plus:boolean) => {
 
-    if(plus){
+    if(plus){      
       setCount(validCount(count + 1));
-      console.log(count);      
-      sendQuantity(count);
+      console.log(count + 1);      
+      sendQuantity(validCount(count + 1));
       
     }else{
       setCount(validCount(count - 1));
-      console.log(count);
-      sendQuantity(count);
+      console.log(count - 1);
+      sendQuantity(validCount(count - 1));
     }
 
-    // sendQuantity(count);
   }
 
   return (
